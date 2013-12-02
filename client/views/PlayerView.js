@@ -11,6 +11,10 @@ MyTunes.Views.PlayerView = Backbone.View.extend({
   initialize: function() {
   },
 
+  events: {
+    'ended': 'songHasEnded'
+  },
+
   setSong: function(song){
     this.model = song;
     this.render();
@@ -18,6 +22,11 @@ MyTunes.Views.PlayerView = Backbone.View.extend({
 
   render: function(){
     return this.$el.attr('src', this.model.get('url'));
+  },
+
+  songHasEnded: function() {
+    console.log("playerView: song has ended")
+    this.model.ended();
   }
 
 });

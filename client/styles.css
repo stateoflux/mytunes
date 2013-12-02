@@ -12,19 +12,37 @@
   padding-left: 15px;
 }
 .library-shell {
-  height: 639px;
+  height: 654px;
   background-color: #34495e;
   color: #fff;
   font-size: 14px;
 }
 
-th, td {
-  padding: 3px 20px 3px 0;
-}
-th {
+table th {
+  border-width: 2px;
   color: #16a085;
   font-weight: bold;
 }
+table tr:last-child th,
+table tr:last-child td {
+  border-bottom: none;
+}
+table.library tr:nth-child(even) {
+  background: #2C3E50;
+}    
+
+.library tbody tr:hover {
+  background-color: #E74C3C;
+  cursor: pointer; 
+}
+
+table.queue tr:nth-child(even) {
+  background: #ccc;
+}    
+/* .queue:hover {
+  background-color: #E74C3C;
+  cursor: pointer; 
+} */
 .count {
   text-align: center;
 }
@@ -39,7 +57,7 @@ th {
 }
 
 audio {
-  width: 652px;
+  width: 681px;
 }
 
 .album-cover {

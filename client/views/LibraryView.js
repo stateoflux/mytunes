@@ -5,6 +5,7 @@ window.MyTunes.Views = window.MyTunes.Views || {};
 MyTunes.Views.LibraryView = Backbone.View.extend({
 
   tagName: "table",
+  className: "table library",
 
   initialize: function() {
     this.render();
