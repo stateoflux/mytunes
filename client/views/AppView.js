@@ -14,10 +14,12 @@ MyTunes.Views.AppView = Backbone.View.extend({
   },
 
   render: function(){
-    return this.$el.html([
-      this.playerView.$el,
-      this.libraryView.$el
-    ]);
+    $('.player-shell').append(this.playerView.$el);
+    return this.$el.html( this.libraryView.$el );
+    // return this.$el.html([
+    //   this.playerView.$el,
+    //   this.libraryView.$el
+    // ]);
   }
 
 });

@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flat UI Free</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="bower_components/flat-ui-official/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="bower_components/flat-ui-official/css/flat-ui.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <link href="styles.css" rel="stylesheet">
+  </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="title-bar"><h3>My Tunes</h3></div>
+      </div>
+      <div class="row">
+        <div class="col-md-5 library-shell">
+          <h4 class="library-heading">Your Library</h4>
+        </div>
+        <div class="col-md-7">
+          <div class="row album-shell">
+            <img class= "album-cover" src="images/one-in-a-million-4ee2432c9cc03.jpg" alt="">
+          </div>
+          <div class="row">
+            <div class="col-md-12 playlist-shell">
+              <h4>Playlist</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 player-shell"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
+     <!-- Flat-UI scripts  -->
+    <script src="bower_components/flat-ui-official/js/bootstrap.min.js"></script>
+    <script src="bower_components/flat-ui-official/js/bootstrap-select.js"></script>
+    <script src="bower_components/flat-ui-official/js/bootstrap-switch.js"></script>
+    <script src="bower_components/flat-ui-official/js/flatui-checkbox.js"></script>
+    <script src="bower_components/flat-ui-official/js/flatui-radio.js"></script>
+    <script src="bower_components/flat-ui-official/js/jquery.tagsinput.js"></script>
+    <script src="bower_components/flat-ui-official/js/jquery.placeholder.js"></script>
 
     <script src="data/data.js"></script>
 
@@ -30,8 +82,10 @@
         var appView = new MyTunes.Views.AppView({model: app});
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        $('.library-shell').append(appView.render());
       });
     </script>
   </body>
 </html>
+
+

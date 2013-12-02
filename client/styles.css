@@ -1,0 +1,49 @@
+.container {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+}
+
+.title-bar {
+  border-bottom: 1px solid #ccc;
+}
+
+.title-bar h3 {
+  margin: 10px 0;
+  padding-left: 15px;
+}
+.library-shell {
+  height: 639px;
+  background-color: #34495e;
+  color: #fff;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 3px 20px 3px 0;
+}
+th {
+  color: #16a085;
+  font-weight: bold;
+}
+.count {
+  text-align: center;
+}
+.playlist-shell {
+  height: 300px;
+}
+
+.album-shell {
+  height: 300px;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #ccc;
+}
+
+audio {
+  width: 652px;
+}
+
+.album-cover {
+  height: 300px; 
+  width: 300px;
+  margin-left: 180px;
+}
