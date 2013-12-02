@@ -20,8 +20,9 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
     }, this);
 
     this.on('dequeue', function(song) {
-      console.log(song);
       this.remove(song);
+      console.log("Triggering stopPlay");
+      this.trigger("stopPlay");
       if (this.length >= 1)  {
         this.playFirst();
       }

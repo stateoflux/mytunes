@@ -65,3 +65,8 @@ audio {
   width: 300px;
   margin-left: 180px;
 }
+
+.fui-cross:hover {
+  cursor: pointer;
+  color: #E74C3C
+}

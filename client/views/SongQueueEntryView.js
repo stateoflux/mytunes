@@ -6,12 +6,16 @@ MyTunes.Views.SongQueueEntryView = Backbone.View.extend({
 
   tagName: 'tr',
 
-  template: _.template('<td class="queue"><%= artist %></td><td><%= title %></td>'),
+  template: _.template('<td><span class="fui-volume"></span></td><td class="queue"><%= artist %></td><td><%= title %></td> <td><span class="fui-cross"></span></td>'),
 
   events: {
-    'click': function() {
+    'click .queue': function() {
       this.model.play();
+      console.log("Clicked on queue");  
       // this.model.enqueue();
+    },
+    'click .fui-cross': function() {
+      this.model.dequeue();
     }
   },
 

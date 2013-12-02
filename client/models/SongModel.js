@@ -15,8 +15,9 @@ MyTunes.Models.SongModel = Backbone.Model.extend({
   },
   play: function(){
     // Triggering an event here will also trigger the event on the collection
+    this.set("count", this.get("count")+1);
     this.trigger('play', this);
-    this.count = this.count + 1;
+
   },
 
   enqueue: function() {
@@ -25,7 +26,7 @@ MyTunes.Models.SongModel = Backbone.Model.extend({
   },
 
   ended: function() {
-    console.log("song: song has ended")
+    console.log("song: song has ended");
     this.trigger('songEnded', this);
   },
 

@@ -16,6 +16,11 @@ MyTunes.Views.LibraryEntryView = Backbone.View.extend({
     }
   },
 
+  initialize: function() {
+    this.model.on('play', function(song) {
+      this.render();
+    },this);
+  },
   render: function(){
     return this.$el.html(this.template(this.model.attributes));
   }
