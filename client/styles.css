@@ -1,0 +1,67 @@
+.container {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+}
+
+.title-bar {
+  border-bottom: 1px solid #ccc;
+}
+
+.title-bar h3 {
+  margin: 10px 0;
+  padding-left: 15px;
+}
+.library-shell {
+  height: 654px;
+  background-color: #34495e;
+  color: #fff;
+  font-size: 14px;
+}
+
+table th {
+  border-width: 2px;
+  color: #16a085;
+  font-weight: bold;
+}
+table tr:last-child th,
+table tr:last-child td {
+  border-bottom: none;
+}
+table.library tr:nth-child(even) {
+  background: #2C3E50;
+}    
+
+.library tbody tr:hover {
+  background-color: #E74C3C;
+  cursor: pointer; 
+}
+
+table.queue tr:nth-child(even) {
+  background: #ccc;
+}    
+/* .queue:hover {
+  background-color: #E74C3C;
+  cursor: pointer; 
+} */
+.count {
+  text-align: center;
+}
+.playlist-shell {
+  height: 300px;
+}
+
+.album-shell {
+  height: 300px;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #ccc;
+}
+
+audio {
+  width: 681px;
+}
+
+.album-cover {
+  height: 300px; 
+  width: 300px;
+  margin-left: 180px;
+}

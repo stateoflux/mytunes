@@ -5,12 +5,13 @@ window.MyTunes.Views = window.MyTunes.Views || {};
 MyTunes.Views.LibraryEntryView = Backbone.View.extend({
 
   tagName: 'tr',
+  className: 'library',
 
-  template: _.template('<td>(<%= artist %>)</td><td><%= title %></td>'),
+  template: _.template('<td><%= artist %></td><td><%= title %></td><td class="count"><%= count %></td>'),
 
   events: {
     'click': function() {
-      this.model.play();
+      // this.model.play();
       this.model.enqueue();
     }
   },
