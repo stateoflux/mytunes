@@ -10,6 +10,7 @@ MyTunes.Views.AppView = Backbone.View.extend({
     this.songQueueView = new MyTunes.Views.SongQueueView({collection: this.model.get('songQueue')});
 
     this.model.on('change:currentSong', function(model){
+      console.log("abcdef", model);
       this.playerView.setSong(model.get('currentSong'));
     }, this);
 
@@ -19,9 +20,23 @@ MyTunes.Views.AppView = Backbone.View.extend({
     }, this);
   },
 
+  addFromLS: function() {
+    var self = this;
+    if (window.localStorage["sq"] !== undefined) {
+      var songData = JSON.parse(window.localStorage["sq"]);
+    
+      for (var i = 0; i < songData.length; i++) {
+        this.model.get('songQueue').add(songData[i]);
+      }
+      // this.model.get('songQueue').at(0).play();
+    }
+  },
+
   render: function(){
+    
     $('.player-shell').append(this.playerView.$el);
     $('.playlist-shell').append(this.songQueueView.$el);
+    // this.addFromLS();
     return this.$el.html( this.libraryView.$el );
   }
 

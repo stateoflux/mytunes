@@ -6,10 +6,14 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
 
   model: MyTunes.Models.SongModel,
   initialize: function(){
+
+    window.sq = this;
+
     this.on('add', function(song)  {
       if (this.length ===1) {
         this.playFirst();
       }
+    // this.saveToLS(this);
     });
 
     this.on('songEnded', function(song) {
@@ -26,9 +30,20 @@ MyTunes.Collections.SongQueue = MyTunes.Collections.Songs.extend({
       if (this.length >= 1)  {
         this.playFirst();
       }
+      // this.saveToLS(this);
     }, this);
 
 
+  },
+
+  saveToLS: function(songQueue) {
+    var cids = [];
+    for (var i = 0; i < songQueue.length; i++) {
+      cids.push(songQueue.models[i]["cid"]);
+    }
+   
+   
+    window.localStorage["sq"] = cids;
   },
 
   playFirst: function() {
