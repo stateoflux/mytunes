@@ -70,6 +70,7 @@
     <script src="views/SongQueueView.js"></script>
     <script src="views/SongQueueEntryView.js"></script>
     <script src="views/AppView.js"></script>
+    <script src="router/TunesRouter.js"></script>
 
     <script>
       $(function(){
@@ -81,6 +82,7 @@
         // build a view for the top level of the whole app
         var appView = new MyTunes.Views.AppView({model: app});
 
+        var router = new MyTunes.Router.TunesRouter({model:app});
         // put the view onto the screen
         $('.library-shell').append(appView.render());
       });
