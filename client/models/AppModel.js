@@ -14,8 +14,8 @@ MyTunes.Models.AppModel = Backbone.Model.extend({
     the 'this' we use that's actually in the funciton (this.set('currentSong', song)) would
     end up refering to the window. That's just what happens with all JS events. The handlers end up
     getting called from the window (unless we override it, as we do here). */
-    params.library.on( 'play', function(song){
-      console.log("Playing", song);
+    params.library.on('play', function(song){
+      console.log("appModel: Playing", song);
       this.set('currentSong', song);
       // window.localStorage["lq"] = JSON.stringify(params.library);
     }, this);
@@ -28,10 +28,12 @@ MyTunes.Models.AppModel = Backbone.Model.extend({
       this.get('songQueue').remove(song);
     }, this);
 
-    this.get('songQueue').on('play', function(song) {
-      console.log("songQueue, play", song);
+    // Added code below to support out local storage implementation
+    // but had to back the support out due to bugs
+    /* this.get('songQueue').on('play', function(song) {
+      console.log("appModel: heard play event from songQueue", song);
       this.set('currentSong', song);
-    }, this);
+    }, this); */
   }
 
 });

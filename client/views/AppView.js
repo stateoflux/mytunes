@@ -10,12 +10,11 @@ MyTunes.Views.AppView = Backbone.View.extend({
     this.songQueueView = new MyTunes.Views.SongQueueView({collection: this.model.get('songQueue')});
 
     this.model.on('change:currentSong', function(model){
-      console.log("abcdef", model);
+      console.log("appView: heard change:currentSong event", model);
       this.playerView.setSong(model.get('currentSong'));
     }, this);
 
     this.model.get('songQueue').on('stopPlay', function(model) {
-      console.log("In app listening");
       this.playerView.pauseSong();
     }, this);
   },

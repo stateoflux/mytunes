@@ -4,24 +4,26 @@ body {
 }
 .container {
   margin-top: 30px;
-  border: 1px solid ##BDC3C7;
 }
 
 .title-bar {
-  border-bottom: 1px solid #ccc;
 }
 
 .title-bar h3 {
-  margin: 10px 0;
+  margin: 12px 0;
   padding-left: 15px;
 }
 .library-shell {
-  height: 654px;
+  height: 644px;
+  border-radius: 5px;
   background-color: #34495e;
   color: #fff;
   font-size: 14px;
 }
-
+.library-shell h4 {
+  padding: 10px;
+  margin: 0 0 15px 0;
+}
 table th {
   border-width: 2px;
   color: #16a085;
@@ -56,21 +58,28 @@ table.queue tr:nth-child(even) {
 
 .album-shell {
   height: 300px;
-  background-color: #fcfcfc;
-  border-bottom: 1px solid #ccc;
+}
+.album-shell img {
+  height: 280px;
 }
 
 audio {
-  width: 681px;
+  width: 100%;
 }
 
 .album-cover {
   height: 300px; 
   width: 300px;
-  margin-left: 180px;
+  margin-left: 15px;
 }
 
 .fui-cross:hover {
   cursor: pointer;
   color: #E74C3C
+}
+.fui-volume {
+  color: rgba(52, 73, 94, 0.5);
+}
+.playing {
+  color: #2ECC71;
 }
